@@ -4,7 +4,7 @@ from flask_pymongo import PyMongo
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
 from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
-from pymongo.errors import ServerSelectionTimeoutError  # Corrected import
+from pymongo.errors import ServerSelectionTimeoutError  
 import os
 import uuid
 import datetime
