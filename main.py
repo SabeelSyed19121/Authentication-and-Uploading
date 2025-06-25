@@ -17,7 +17,7 @@ app.config['MONGO_URI'] = 'mongodb://localhost:27017/aits'
 app.config['JWT_SECRET_KEY'] = 'fb3e956cd537c3ffaacd57cbd25c13702a0633d3c05da671313f0556e959f83d'
 app.config['UPLOAD_FOLDER'] = os.path.join(os.path.dirname(__file__), 'uploads')
 app.config['ALLOWED_EXTENSIONS'] = {'pptx', 'docx', 'xlsx'}
-app.config['EMAIL_SENDER'] = 'rajadudekula35@gmail.com'
+app.config['EMAIL_SENDER'] = 'sabeelsyed19121@gmail.com'
 app.config['EMAIL_PASSWORD'] = 'tcnr qalt lybc hwlv'
 app.config['BASE_URL'] = 'http://localhost:5000'
 
@@ -49,8 +49,7 @@ def send_verification_email(email, token):
         server.set_debuglevel(1)
         server.login(app.config['EMAIL_SENDER'], app.config['EMAIL_PASSWORD'])
         server.send_message(msg)
-
-# Operation User Routes
+        
 @app.route('/ops/login', methods=['POST'])
 def ops_login():
     data = request.get_json()
@@ -84,7 +83,6 @@ def upload_file():
         return jsonify({'message': 'File uploaded successfully', 'file_id': file_id}), 201
     return jsonify({'message': 'Invalid file type'}), 400
 
-# Client User Routes
 @app.route('/client/signup', methods=['POST'])
 def client_signup():
     data = request.get_json()
